@@ -32,15 +32,6 @@ def printSolution(currentPopulation):
     else:
         print("No solution was found (empty knapsack)")
 
-def plotData(x,y,textX,textY,titleText):
-    fig, ax = plt.subplots()
-    ax.plot(x, y)
-    ax.set(xlabel=textX, ylabel=textY,
-    title=titleText)
-    ax.grid()
-    #fig.savefig("test.png")
-    plt.show()
-
 #Fitness function for calculating accumulative value of selected items
 def fitness(chromosome):
     valueSum = 0
@@ -118,16 +109,10 @@ def newPopulationEvolution(population):
 
 
 def main():
-    #generationFitnessList = []
     currentPopulation = startPopulation()
     currentPopulation.sort(key=fitness, reverse=True)
-    #generationFitnessList.append(fitness(currentPopulation[0]))
-
     for g in range(0,MAX_GENERATIONS):
         currentPopulation.sort(key=fitness, reverse=True)
-        #generationFitnessList.append(fitness(currentPopulation[0]))
         currentPopulation = newPopulationEvolution(currentPopulation)
     currentPopulation.sort(key=fitness, reverse=True)
-    #Item.printItemList(ITEMS)
     printSolution(currentPopulation)
-    #plotData(range(0,MAX_GENERATIONS+1),generationFitnessList,"Generation","Value","Graph for a "+str(len(ITEMS))+" item, "+str(KNAPSACK_SIZE)+" weight knapsack problem")

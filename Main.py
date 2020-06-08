@@ -16,11 +16,10 @@ def main():
 
     Item.printItemList(ITEM_LIST)
 
-    #GeneticAlgorithm.main()
+    GeneticAlgorithm.main()
     BranchAndBoundAlgorithm.main()
-    #SimulatedAnnealing.main()
-    #DynamicProgramming.main()
-    #BruteForce.main()
+    SimulatedAnnealing.main()
+    DynamicProgramming.main()
 
     print()
 if __name__ == "__main__":
