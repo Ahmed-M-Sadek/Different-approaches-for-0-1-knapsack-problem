@@ -1,6 +1,5 @@
 from item import Item
 import random
-import matplotlib.pyplot as plt
 
 #Generating functions
 def startPopulation():

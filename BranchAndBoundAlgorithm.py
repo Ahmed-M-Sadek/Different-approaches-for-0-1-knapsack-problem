@@ -1,13 +1,16 @@
+from item import Item
 from collections import deque
 from TreeNode import Node
 
 #Globals
 ITEMS, KNAPSACK_SIZE = [], 0
+def Density(individual):
+    return individual.value/float(individual.weight)
 
 def BranchAndBoundAlgorithm():
     queue = deque()
 
-    sortedItemList = [(index, item.weight / float(item.value)) for index, item in enumerate(ITEMS)]
+    sortedItemList = [(index, Density(item)) for index, item in enumerate(ITEMS)]
     sortedItemList = sorted(sortedItemList, key=lambda x: x[1], reverse=True)
 
     bestNode = Node(0, 0.0, 0.0, 0.0, [])

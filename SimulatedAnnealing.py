@@ -3,8 +3,8 @@ import math
 import random
 
 #CONSTANTS
-ALPHA = 0.85
-INITIAL_TEMPERATURE = 125
+ALPHA = 0.99
+INITIAL_TEMPERATURE = 150
 STEPS = 30000
 
 #Globals

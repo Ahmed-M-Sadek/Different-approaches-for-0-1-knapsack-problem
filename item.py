@@ -36,6 +36,7 @@ class Item:
             KNAPSACK_SIZE = random.randint(MIN_KNAPSACK_SIZE, MAX_KNAPSACK_SIZE)
         else:
             KNAPSACK_SIZE = capacity
+        print(starting)
         itemList = [Item(random.randint(1,VALUE_UPPERLIMIT),random.randint(1,WEIGHT_UPPERLIMIT)) for i in range(0,random.randint(starting,MAX_NUMBER_OF_ITEMS))]
         return itemList, KNAPSACK_SIZE
 
